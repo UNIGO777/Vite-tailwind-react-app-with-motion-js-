@@ -42,31 +42,28 @@ const HomeHero = () => {
 
   return (
     <motion.div 
-      className='p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-10'
+      className='px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12'
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
         <motion.div 
-          className='gap-3 sm:gap-4 md:gap-5 flex flex-col'
+          className='flex flex-col gap-4 sm:gap-6 lg:flex-1'
           variants={itemVariants}
         >
-            <BlurTypingEffect 
-            className='text-3xl sm:text-4xl md:text-5xl lg:text-4xl max-w-full lg:max-w-[60vw] font-bold text-primary leading-tight'
-              text="Connecting Farmers & Land-Owners"
-              textSizeClass='xl:text-7xl'
-              duration={1}
-            >
-            </BlurTypingEffect>
+            
+            <h1 className=' text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
+              Connecting Farmers &  <span className='bg-gradient-to-r w-fit font-bold from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent'>Land-Owners</span>
+            </h1>
             <motion.p 
-              className='text-sm sm:text-base md:text-lg lg:text-base text-gray-600 max-w-4xl leading-relaxed'
+              className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600  leading-relaxed'
               variants={itemVariants}
             >
               Bridge the gap between agricultural expertise and land resources. Our platform empowers farmers to find suitable land while helping landowners maximize their property's potential through sustainable farming partnerships.
             </motion.p>
             <motion.img 
-              className='w-full lg:w-[55vw] h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[58vh] rounded-2xl sm:rounded-3xl object-cover' 
-              src="https://images.unsplash.com/photo-1699622562082-f08853081066?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              className='w-full hidden md:block  h-[50vh] object-cover' 
+              src="https://plus.unsplash.com/premium_photo-1668456445067-fd72eb5b06fc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2342" 
               alt="Farmers working together in agricultural field"
               variants={imageVariants}
               whileHover={{ scale: 1.02 }}
@@ -74,13 +71,14 @@ const HomeHero = () => {
             />
         </motion.div>
         <motion.div
+          className='lg:flex-shrink-0  lg:w-80 xl:w-96'
           variants={imageVariants}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
           <img 
-            className='w-full lg:w-[40vw] h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[83vh] rounded-2xl sm:rounded-3xl object-cover' 
-            src="https://images.unsplash.com/photo-1580635849262-3161a7c99dac?q=80&w=3412&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            className='w-full  h-full object-cover' 
+            src="https://plus.unsplash.com/premium_photo-1667939464537-396a9468bd22?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2194" 
             alt="Landowner and farmer meeting to discuss partnership" 
           />
         </motion.div>

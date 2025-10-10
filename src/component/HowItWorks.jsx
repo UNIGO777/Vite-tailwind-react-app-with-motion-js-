@@ -13,7 +13,7 @@ const HowItWorks = () => {
     }, [])
 
     return (
-        <section className='bg-[#394937] relative'>
+        <section className='bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] relative'>
             <div className='px-4 sm:px-6 md:px-10 pt-12 sm:pt-16 md:pt-20'>
                 <BlurTypingEffect
                     className="font-normal text-white"

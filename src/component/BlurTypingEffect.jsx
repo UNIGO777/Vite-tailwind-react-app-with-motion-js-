@@ -18,10 +18,11 @@ const BlurTypingEffect = ({ text, className, textSizeClass = 'text-lg sm:text-3x
         })
     };
 
-    const MotionTag = `motion.${as}`;
+    // Create the appropriate motion component based on the 'as' prop
+    const MotionComponent = motion[as] || motion.h1;
 
     return (
-        <MotionTag
+        <MotionComponent
             ref={ref}
             className={`${textSizeClass}  bebas-neue-regular  font-bold  flex flex-wrap  ${className}`}
             key={text}
@@ -39,7 +40,7 @@ const BlurTypingEffect = ({ text, className, textSizeClass = 'text-lg sm:text-3x
                     {char}
                 </motion.span>
             ))}
-        </MotionTag>
+        </MotionComponent>
     );
 };
 

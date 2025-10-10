@@ -165,7 +165,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="relative p-6 sm:p-8 bg-gradient-to-r from-[#394937] to-[#4a5a48] text-white">
+            <div className="relative p-6 sm:p-8 bg-gradient-to-r from-[#1a4d1a] via-[#225122] to-[#4a8f4a] text-white">
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-full transition-colors duration-200"
@@ -230,7 +230,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                       className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
                         errors.name 
                           ? 'border-red-300 focus:ring-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:ring-[#394937] focus:border-[#394937]'
+                          : 'border-gray-300 focus:ring-[#1a4d1a] focus:border-[#1a4d1a]'
                       }`}
                       placeholder="Enter your full name"
                     />
@@ -260,7 +260,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                       className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
                         errors.email 
                           ? 'border-red-300 focus:ring-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:ring-[#394937] focus:border-[#394937]'
+                          : 'border-gray-300 focus:ring-[#1a4d1a] focus:border-[#1a4d1a]'
                       }`}
                       placeholder="Enter your email address"
                     />
@@ -293,7 +293,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                       className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
                         errors.phone 
                           ? 'border-red-300 focus:ring-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:ring-[#394937] focus:border-[#394937]'
+                          : 'border-gray-300 focus:ring-[#1a4d1a] focus:border-[#1a4d1a]'
                       }`}
                       placeholder="Enter your phone number (optional)"
                     />
@@ -322,7 +322,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                       className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
                         errors.subject 
                           ? 'border-red-300 focus:ring-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:ring-[#394937] focus:border-[#394937]'
+                          : 'border-gray-300 focus:ring-[#1a4d1a] focus:border-[#1a4d1a]'
                       }`}
                     >
                       <option value="">Select a subject</option>
@@ -360,7 +360,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 resize-none ${
                       errors.message 
                         ? 'border-red-300 focus:ring-red-500 focus:border-red-500' 
-                        : 'border-gray-300 focus:ring-[#394937] focus:border-[#394937]'
+                        : 'border-gray-300 focus:ring-[#1a4d1a] focus:border-[#1a4d1a]'
                     }`}
                     placeholder="Tell us about your project, goals, or any questions you have..."
                   />
@@ -380,7 +380,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 bg-gradient-to-r from-[#394937] to-[#4a5a48] text-white font-semibold py-3 px-6 rounded-lg hover:from-[#4a5a48] hover:to-[#5c6b5a] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-gradient-to-r from-[#1a4d1a] via-[#225122] to-[#4a8f4a] text-white font-semibold py-3 px-6 rounded-lg hover:from-[#225122] hover:to-[#4a8f4a] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
@@ -417,15 +417,15 @@ const ContactPopup = ({ isOpen, onClose }) => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Other Ways to Reach Us</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-[#394937]" />
+                    <Mail className="w-4 h-4 text-[#1a4d1a]" />
                     <span>contact@bataidar.com</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-[#394937]" />
+                    <Phone className="w-4 h-4 text-[#1a4d1a]" />
                     <span>+1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-center gap-3 sm:col-span-2">
-                    <MapPin className="w-4 h-4 text-[#394937]" />
+                    <MapPin className="w-4 h-4 text-[#1a4d1a]" />
                     <span>123 Agriculture Street, Farm City, FC 12345</span>
                   </div>
                 </div>

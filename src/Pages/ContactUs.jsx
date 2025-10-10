@@ -16,11 +16,11 @@ import Footer from '../component/Footer'
 // Hero Section Component
 const ContactHero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#394937] via-[#2d3a2b] to-[#1f2a1d] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-[#1a4d1a] via-[#2d6b2d] to-[#4a8f4a] flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-20 left-10 w-96 h-96 bg-[#394937] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-20 left-10 w-96 h-96 bg-[#2d6b2d] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -33,7 +33,7 @@ const ContactHero = () => {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-80 h-80 bg-[#4a5a48] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute bottom-20 right-10 w-80 h-80 bg-[#4a8f4a] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             scale: [1.2, 1, 1.2],
             opacity: [0.3, 0.2, 0.3],
@@ -48,12 +48,7 @@ const ContactHero = () => {
         />
       </div>
 
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
+      
 
       <motion.div 
         className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
@@ -67,7 +62,7 @@ const ContactHero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="inline-block px-4 py-2 bg-white/40 rounded-full text-sm font-medium backdrop-blur-sm border border-[#394937]/30 flex items-center gap-2 w-fit mx-auto">
+          <span className="inline-block px-4 py-2 bg-white/40 rounded-full text-sm font-medium backdrop-blur-sm border border-[#2d6b2d]/30 flex items-center gap-2 w-fit mx-auto">
             <Phone className="w-4 h-4" />
             Get in Touch
           </span>
@@ -81,7 +76,7 @@ const ContactHero = () => {
         >
           Let's Talk
           <motion.span 
-            className="block bg-gradient-to-r text-[#566d53] from-[#394937] via-[#4a5a48] to-[#5c6b5a] bg-clip-text"
+            className="block bg-gradient-to-r text-[#4a8f4a] from-[#1a4d1a] via-[#2d6b2d] to-[#4a8f4a] bg-clip-text"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -161,7 +156,7 @@ const ContactForm = () => {
 
   return (
     <section id="contact-form" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           ref={ref}
           className="max-w-7xl mx-auto"
@@ -171,7 +166,7 @@ const ContactForm = () => {
         >
           <div className="text-center mb-12 sm:mb-16">
             <motion.span 
-              className="inline-block px-3 sm:px-4 py-2 bg-gradient-to-br from-[#394937]/30 via-[#2d3a2b]/30 to-[#1f2a1d]/30 rounded-full text-xs sm:text-sm font-semibold mb-4"
+              className="inline-block px-3 sm:px-4 py-2 bg-gradient-to-br from-[#1a4d1a]/30 via-[#2d6b2d]/30 to-[#4a8f4a]/30 rounded-full text-xs sm:text-sm font-semibold mb-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -317,9 +312,19 @@ const ContactForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-[#394937] via-[#2d3a2b] to-[#1f2a1d] text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl  transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                    className="w-full bg-gradient-to-r from-[#1a4d1a] via-[#2d6b2d] to-[#4a8f4a] text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        Send Message
+                      </>
+                    )}
                   </button>
                 </motion.div>
               </form>
@@ -360,8 +365,8 @@ const ContactInfo = () => {
   ]
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#394937]/5 via-[#2d3a2b]/5 to-[#1f2a1d]/5">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#1a4d1a]/5 via-[#2d6b2d]/5 to-[#4a8f4a]/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           ref={ref}
           className="text-center mb-12 sm:mb-16"
@@ -369,7 +374,7 @@ const ContactInfo = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-3 sm:px-4 py-2 bg-gradient-to-br from-[#394937]/20 via-[#2d3a2b]/20 to-[#1f2a1d]/20 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 text-[#394937] flex items-center gap-2 w-fit mx-auto">
+          <span className="inline-block px-3 sm:px-4 py-2 bg-gradient-to-br from-[#1a4d1a]/20 via-[#2d6b2d]/20 to-[#4a8f4a]/20 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 text-[#2d6b2d] flex items-center gap-2 w-fit mx-auto">
             <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
             Contact Information
           </span>
@@ -385,18 +390,18 @@ const ContactInfo = () => {
           {contactCards.map((card, index) => (
             <motion.div
               key={index}
-              className="group bg-white rounded-2xl p-6 sm:p-8 transition-all duration-300 border border-gray-100 hover:border-[#394937]/30"
+              className="group bg-white rounded-2xl p-6 sm:p-8 transition-all duration-300 border border-gray-100 hover:border-[#2d6b2d]/30"
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#394937] via-[#2d3a2b] to-[#1f2a1d] rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#1a4d1a] via-[#2d6b2d] to-[#4a8f4a] rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                 {React.cloneElement(card.icon, { className: "w-6 h-6 sm:w-8 sm:h-8" })}
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{card.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">{card.info}</p>
-              <button className="text-[#394937] font-semibold hover:text-[#2d3a2b] transition-colors duration-300 flex items-center gap-2 group text-sm sm:text-base">
+              <button className="text-[#2d6b2d] font-semibold hover:text-[#1a4d1a] transition-colors duration-300 flex items-center gap-2 group text-sm sm:text-base">
                 {card.action}
                 <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>

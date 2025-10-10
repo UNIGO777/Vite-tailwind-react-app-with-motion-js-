@@ -11,7 +11,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-[#394937] text-white py-8 sm:py-12 px-4">
+    <footer className="bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] text-white py-8 sm:py-12 px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-20">
           {/* Logo and Tagline Section */}
@@ -52,9 +52,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Border/Copyright Section */}
-        <div className="border-t border-gray-600 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center">
-          <p className="text-xs sm:text-sm text-gray-400">
-            © 2024 Bataidar. All rights reserved.
+        <div className="border-t border-gray-400 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center">
+          <p className="text-xs sm:text-sm text-gray-300">
+            © 2025 Bataidar. All rights reserved.
           </p>
         </div>
       </div>

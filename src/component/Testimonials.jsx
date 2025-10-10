@@ -91,14 +91,16 @@ const Testimonials = () => {
   }
 
   return (
-    <div className='p-10' ref={ref}>
+    <div className='p-5 md:p-10 pt-10' ref={ref}>
       <motion.div
         variants={titleVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         className="flex "
       >
-        <h1 className='text-sm top-10 mb-5 right-10 opacity-7 0 font-bold text-primary text-center border-x-2 border-black w-fit px-4'>TESTIMONIALS</h1>
+        <h1 className='bg-gradient-to-r w-fit font-bold from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-3xl border-l-2 border-r-2 mb-5 px-3 border-[#4a8f4a]'>
+              Testimonials
+            </h1>
       </motion.div>
 
       <motion.div
@@ -106,11 +108,14 @@ const Testimonials = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <BlurTypingEffect textSizeClass='text-base md:text-3xl' className="text-primary opacity-90" text="Real stories from farmers and landowners who connected through Bataidar."/>
+        <p className='bg-gradient-to-r w-fit font-bold from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent text-sm sm:text-4xl md:text-5xl lg:text-3xl xl:text-2xl'>
+              Real stories from farmers and landowners who connected through Bataidar.
+            </p>
+        
       </motion.div>
 
       <motion.div
-        className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
@@ -119,7 +124,7 @@ const Testimonials = () => {
           <motion.div
             key={t.id}
             variants={itemVariants}
-            className="bg-[#e1eae3] rounded-xl p-6 hover:shadow-xl transition-shadow duration-300"
+            className=" rounded-xl p-6 hover:shadow-xl transition-shadow duration-300 bg-gradient-to-r w-fit font-bold from-[#1a4d1a]/20 via-[#225122]/20 to-[#4a8f4a]/30"
             whileHover={{ scale: 1.03 }}
           >
             <div className="flex items-center mb-4">
@@ -138,7 +143,7 @@ const Testimonials = () => {
             </div>
 
             <motion.p
-              className="text-gray-700 mb-4 italic"
+              className=" mb-4 italic bg-gradient-to-r from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -150,7 +155,7 @@ const Testimonials = () => {
               {[...Array(5)].map((_, i) => (
                 <motion.svg
                   key={i}
-                  className={`w-5 h-5 ${i < t.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                  className={`w-5 h-5 ${i < t.rating ? 'text-yellow-500' : 'text-gray-300'}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   initial={{ scale: 0 }}

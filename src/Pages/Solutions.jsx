@@ -1,70 +1,68 @@
-import React, { useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React from 'react'
+import { motion } from 'framer-motion'
 import { useInView as useInViewHook } from 'react-intersection-observer'
 import { 
+  Lightbulb, 
   Sprout, 
+  Phone, 
+  Target, 
+  CheckCircle, 
   Droplets, 
-  Zap, 
-  Shield, 
   BarChart3, 
+  Shield, 
+  Thermometer, 
+  Leaf, 
   Smartphone,
-  Leaf,
-  Sun,
-  CloudRain,
-  Thermometer,
   TrendingUp,
-  CheckCircle,
-  ArrowRight,
-  Phone,
-  Users,
-  Target,
-  Award,
   Globe,
-  Lightbulb
+  Award,
+  Users
 } from 'lucide-react'
 import Footer from '../component/Footer'
 import { useContact } from '../context/ContactContext'
 
 const SolutionsHero = () => {
   const { openContactPopup } = useContact()
-  
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#394937] via-[#2d3a2b] to-[#1f2a1d] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-20 left-10 w-72 h-72 bg-[#394937] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-20 left-10 w-72 h-72 bg-[#225122] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2]
+            x: [0, 50, 0],
+            y: [0, 30, 0]
           }}
           transition={{ 
-            duration: 4,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         ></motion.div>
         <motion.div 
-          className="absolute top-40 right-10 w-72 h-72 bg-[#394937] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-40 right-10 w-72 h-72 bg-[#225122] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.2, 0.4]
+            x: [0, -30, 0],
+            y: [0, 50, 0]
           }}
           transition={{ 
-            duration: 5,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 1
           }}
         ></motion.div>
         <motion.div 
-          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#394937] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#225122] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.3, 0.2]
+            rotate: [0, 180, 360]
           }}
           transition={{ 
-            duration: 6,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2
@@ -72,12 +70,7 @@ const SolutionsHero = () => {
         ></motion.div>
       </div>
 
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Cpath d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
+     
 
       <motion.div 
         className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
@@ -91,7 +84,7 @@ const SolutionsHero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="inline-block px-3 sm:px-4 py-2 bg-white/40 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm border border-[#394937]/30 flex items-center gap-2 w-fit mx-auto">
+          <span className="inline-block px-3 sm:px-4 py-2 bg-white/40 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm border border-[#225122]/30 flex items-center gap-2 w-fit mx-auto">
             <Lightbulb className="w-3 h-3 sm:w-4 sm:h-4" />
             Innovative Agricultural Solutions
           </span>
@@ -105,7 +98,7 @@ const SolutionsHero = () => {
         >
           Smart Agriculture
           <motion.span 
-            className="block bg-gradient-to-r text-[#566d53] from-[#394937] via-[#4a5a48] to-[#5c6b5a] bg-clip-text"
+            className="block bg-gradient-to-r text-[#4a8f4a] from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -132,7 +125,7 @@ const SolutionsHero = () => {
         >
           <motion.button 
             onClick={openContactPopup}
-            className="bg-gradient-to-r from-[#394937] to-[#4a5a48] text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:from-[#4a5a48] hover:to-[#5c6b5a] transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
+            className="bg-gradient-to-r from-[#1a4d1a] via-[#225122] to-[#4a8f4a] text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:from-[#225122] hover:to-[#4a8f4a] transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -142,7 +135,7 @@ const SolutionsHero = () => {
           
           <motion.button 
             onClick={openContactPopup}
-            className="border-2 border-white/30 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm text-sm sm:text-base"
+            className="border-2 border-white/30 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:bg-white/10 hover:text-[#225122] transition-all duration-300 flex items-center gap-2 backdrop-blur-sm text-sm sm:text-base"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -182,17 +175,17 @@ const SolutionCard = ({ icon: Icon, title, description, features, category }) =>
       whileHover={{ y: -5 }}
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#394937] to-[#4a5a48] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
           <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
         </div>
         <div>
-          <span className="text-xs sm:text-sm text-[#394937] font-medium bg-[#394937]/10 px-3 py-1 rounded-full">
+          <span className="text-xs sm:text-sm text-[#225122] font-medium bg-[#225122]/10 px-3 py-1 rounded-full">
             {category}
           </span>
         </div>
       </div>
       
-      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#394937] transition-colors duration-300">
+      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#225122] transition-colors duration-300">
         {title}
       </h3>
       
@@ -203,13 +196,11 @@ const SolutionCard = ({ icon: Icon, title, description, features, category }) =>
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-3 text-sm sm:text-base">
-            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#394937] flex-shrink-0" />
+            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#225122] flex-shrink-0" />
             <span className="text-gray-700">{feature}</span>
           </li>
         ))}
       </ul>
-      
-      
     </motion.div>
   )
 }
@@ -297,7 +288,7 @@ const SolutionsGrid = () => {
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-5 sm:px-6 lg:px-10">
         <motion.div
           ref={ref}
           className="text-center mb-12 sm:mb-16"
@@ -311,7 +302,7 @@ const SolutionsGrid = () => {
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="px-3 sm:px-4 py-2 bg-[#394937]/10 rounded-full text-xs sm:text-sm font-medium text-[#394937] flex items-center gap-2 w-fit mx-auto">
+            <span className="px-3 sm:px-4 py-2 bg-[#225122]/10 rounded-full text-xs sm:text-sm font-medium text-[#225122] flex items-center gap-2 w-fit mx-auto">
               <Target className="w-3 h-3 sm:w-4 sm:h-4" />
               Our Solutions Portfolio
             </span>
@@ -324,7 +315,7 @@ const SolutionsGrid = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Comprehensive Agricultural
-            <span className="block text-[#394937]">Technology Solutions</span>
+            <span className="block text-[#225122]">Technology Solutions</span>
           </motion.h2>
           
           <motion.p 
@@ -390,7 +381,7 @@ const FeaturesSection = () => {
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-5 sm:px-6 lg:px-10">
         <motion.div
           ref={ref}
           className="text-center mb-12 sm:mb-16"
@@ -404,7 +395,7 @@ const FeaturesSection = () => {
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="inline-block px-3 sm:px-4 py-2 bg-[#394937]/10 rounded-full text-xs sm:text-sm font-medium text-[#394937] flex items-center gap-2 w-fit mx-auto">
+            <span className="inline-block px-3 sm:px-4 py-2 bg-[#225122]/10 rounded-full text-xs sm:text-sm font-medium text-[#225122] flex items-center gap-2 w-fit mx-auto">
               <Award className="w-3 h-3 sm:w-4 sm:h-4" />
               Why Choose Our Solutions
             </span>
@@ -417,7 +408,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Proven Results That
-            <span className="block text-[#394937]">Drive Success</span>
+            <span className="block text-[#225122]">Drive Success</span>
           </motion.h2>
           
           <motion.p 
@@ -442,15 +433,15 @@ const FeaturesSection = () => {
               whileHover={{ y: -5 }}
             >
               <div className="relative mb-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#394937] to-[#4a5a48] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <div className="absolute -top-2 -right-2 bg-[#394937] text-white text-xs font-bold px-2 py-1 rounded-full">
+                <div className="absolute -top-2 -right-2 bg-[#225122] text-white text-xs font-bold px-2 py-1 rounded-full">
                   {feature.stats}
                 </div>
               </div>
               
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-[#394937] transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-[#225122] transition-colors duration-300">
                 {feature.title}
               </h3>
               
@@ -463,7 +454,7 @@ const FeaturesSection = () => {
 
         {/* Additional Benefits Section */}
         <motion.div
-          className="mt-16 sm:mt-20 bg-gradient-to-br from-[#394937] to-[#4a5a48] rounded-3xl p-8 sm:p-12 text-white"
+          className="mt-16 sm:mt-20 bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] rounded-3xl p-8 sm:p-12 text-white"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -534,7 +525,7 @@ const CallToActionSection = () => {
       <div className=" mx-auto ">
         <motion.div
           ref={ref}
-          className="bg-gradient-to-br from-[#394937] via-[#4a5a48] to-[#5c6b5a]  p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden"
+          className="bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
@@ -615,7 +606,7 @@ const CallToActionSection = () => {
             >
               <motion.button 
                 onClick={openContactPopup}
-                className="bg-white text-[#394937] font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 text-base sm:text-lg shadow-lg"
+                className="bg-white text-[#225122] font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 text-base sm:text-lg shadow-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

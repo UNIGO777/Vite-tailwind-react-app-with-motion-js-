@@ -2,31 +2,35 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
-  Wheat, 
   Target, 
-  Eye, 
-  Gem, 
-  Sprout, 
   Users, 
   BookOpen, 
-  User, 
-  UserCheck, 
-  FlaskConical, 
-  Laptop 
+  Leaf, 
+  Heart, 
+  Shield,
+  User,
+  Briefcase,
+  GraduationCap,
+  Award
 } from 'lucide-react'
 import Footer from '../component/Footer'
 
 const AboutUsHero = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  })
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#394937] via-[#2d3a2b] to-[#1f2a1d] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] flex items-center justify-center overflow-hidden" ref={ref}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-20 left-10 w-96 h-96 bg-[#394937] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-20 left-10 w-72 h-72 bg-[#225122] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, 50, 0]
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
           }}
           transition={{ 
             duration: 8,
@@ -35,83 +39,83 @@ const AboutUsHero = () => {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-80 h-80 bg-[#4a5a48] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute bottom-20 right-10 w-80 h-80 bg-[#225122] rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.2, 0.3],
-            y: [0, -30, 0]
+            x: [0, -50, 0],
+            y: [0, 30, 0]
           }}
           transition={{ 
-            duration: 6,
+            duration: 10,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-10 w-24 h-24 bg-[#225122] rounded-full opacity-10"
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.5, 1]
+          }}
+          transition={{ 
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear"
           }}
         />
       </div>
 
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
+     
 
-      <motion.div 
-        className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="mb-6"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/40 rounded-full text-sm font-medium backdrop-blur-sm border border-[#394937]/30">
-            <Wheat className="w-4 h-4" />
-            About Bataidar
-          </span>
-        </motion.div>
-        
-        <motion.h1 
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          Cultivating
-          <motion.span 
-            className="block bg-gradient-to-r text-[#566d53] from-[#394937] via-[#4a5a48] to-[#5c6b5a] bg-clip-text"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+          <motion.div 
+            className="mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Agricultural Success
-          </motion.span>
-        </motion.h1>
-        
-        <motion.p 
-          className="text-lg sm:text-xl lg:text-2xl text-gray-200 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-        >
-          We are dedicated to revolutionizing agriculture by connecting land owners with passionate farmers, creating sustainable partnerships that benefit communities and drive agricultural innovation.
-        </motion.p>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute -bottom-20 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm border border-white/30">
+              <Users className="w-4 h-4" />
+              About Bataidar
+            </span>
+          </motion.div>
+          <motion.h1 
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Connecting <span className="bg-gradient-to-r text-[#4a8f4a] from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text">Farmers</span> & <span className="bg-gradient-to-r text-[#4a8f4a] from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text">Landowners</span>
+          </motion.h1>
+          <motion.p 
+            className="text-xl sm:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            We bridge the gap between passionate farmers and landowners, creating sustainable agricultural partnerships that benefit communities and the environment.
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <button className="px-8 py-4 bg-white text-[#225122] rounded-full font-semibold hover:bg-gray-100 transition-colors">
+              Our Mission
+            </button>
+            <button className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-[#225122] transition-colors">
+              Meet Our Team
+            </button>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }
@@ -126,93 +130,88 @@ const MissionSection = () => {
     {
       icon: Target,
       title: "Our Mission",
-      description: "To bridge the gap between land owners and farmers, creating sustainable agricultural partnerships that benefit both parties while strengthening rural communities and promoting food security."
+      description: "To create a transparent, efficient platform that connects farmers with landowners, fostering sustainable agricultural practices and economic growth in rural communities."
     },
     {
-      icon: Eye,
+      icon: Leaf,
       title: "Our Vision",
-      description: "To become the leading platform for agricultural land partnerships, fostering innovation, sustainability, and prosperity in farming communities worldwide."
+      description: "A world where every piece of fertile land is utilized to its full potential, supporting both environmental sustainability and agricultural prosperity."
     },
     {
-      icon: Gem,
+      icon: Heart,
       title: "Our Values",
-      description: "Integrity, sustainability, innovation, and community. We believe in transparent partnerships, environmental stewardship, and empowering farmers with the resources they need to succeed."
+      description: "Transparency, sustainability, community support, and innovation drive everything we do. We believe in building lasting relationships based on trust and mutual benefit."
     }
   ]
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden" ref={ref}>
-      {/* Background Decorations */}
-      <div className="absolute inset-0">
+    <section className="py-20 px-4 bg-white relative overflow-hidden" ref={ref}>
+      <div className="container mx-auto relative z-10">
         <motion.div 
-          className="absolute top-20 left-10 w-32 h-32 bg-[#394937] rounded-full opacity-10"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-10 w-24 h-24 bg-[#4a5a48] rounded-full opacity-10"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        />
-      </div>
-
-      <div className="container mx-auto  relative z-10">
-        <motion.div 
-          className="text-center mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-0"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div 
-            className="mb-4 sm:mb-6"
+            className="mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#394937]/10 text-[#394937] rounded-full text-xs sm:text-sm font-medium">
-              <Sprout className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#225122]/10 text-[#225122] rounded-full text-sm font-medium">
+              <Shield className="w-4 h-4" />
               Our Foundation
             </span>
           </motion.div>
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6 sm:mb-8"
+            className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            What Drives <span className="bg-gradient-to-r from-[#394937] to-[#4a5a48] bg-clip-text text-transparent">Us Forward</span>
+            What Drives <span className="bg-gradient-to-r from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent">Us Forward</span>
           </motion.h2>
+          <motion.p 
+            className="text-md md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Our commitment to agricultural excellence and community development shapes every decision we make.
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {missions.map((mission, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-6 sm:p-8  border border-gray-100 text-center"
+              className="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100  transition-shadow"
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
               transition={{ 
                 duration: 0.6, 
-                delay: 0.6 + index * 0.2,
+                delay: 0.8 + index * 0.2,
                 ease: "easeOut"
               }}
               whileHover={{ 
                 y: -10,
-                scale: 1.02,
                 transition: { duration: 0.3 }
               }}
             >
               <motion.div 
-                className="flex justify-center mb-4 sm:mb-6"
+                className="flex justify-center mb-6"
                 initial={{ scale: 0 }}
                 animate={inView ? { scale: 1 } : { scale: 0 }}
-                transition={{ delay: 0.8 + index * 0.2, duration: 0.5, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ delay: 1 + index * 0.2, duration: 0.5, type: "spring" }}
+                whileHover={{ scale: 1.2, rotate: 10 }}
               >
-                <mission.icon className="w-12 h-12 sm:w-16 sm:h-16 text-[#394937]" />
+                <div className="w-16 h-16 bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] rounded-full flex items-center justify-center">
+                  <mission.icon className="w-8 h-8 text-white" />
+                </div>
               </motion.div>
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">{mission.title}</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{mission.description}</p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">{mission.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{mission.description}</p>
             </motion.div>
           ))}
         </div>
@@ -231,70 +230,81 @@ const TeamSection = () => {
     {
       name: "Rajesh Kumar",
       position: "Founder & CEO",
+      description: "Agricultural engineer with 15+ years of experience in rural development and farming technologies.",
       icon: User,
-      description: "20+ years in agriculture and business development. Passionate about sustainable farming and rural development.",
-      expertise: ["Agricultural Strategy", "Business Development", "Rural Economics"]
+      expertise: ["Agricultural Technology", "Rural Development", "Business Strategy"]
     },
     {
       name: "Priya Sharma",
       position: "Head of Operations",
-      icon: UserCheck,
-      description: "Expert in agricultural operations and land management with extensive field experience.",
-      expertise: ["Operations Management", "Land Assessment", "Partnership Development"]
+      description: "Operations specialist focused on streamlining farmer-landowner partnerships and platform efficiency.",
+      icon: Briefcase,
+      expertise: ["Operations Management", "Partnership Development", "Process Optimization"]
     },
     {
       name: "Dr. Amit Patel",
       position: "Agricultural Advisor",
-      icon: FlaskConical,
-      description: "PhD in Agricultural Sciences with focus on sustainable farming practices and soil management.",
-      expertise: ["Soil Science", "Sustainable Farming", "Research & Development"]
+      description: "PhD in Agricultural Sciences, providing expert guidance on sustainable farming practices and crop optimization.",
+      icon: GraduationCap,
+      expertise: ["Sustainable Farming", "Crop Science", "Agricultural Research"]
     },
     {
-      name: "Sunita Reddy",
-      position: "Technology Lead",
-      icon: Laptop,
-      description: "Leading our digital transformation with innovative solutions for agricultural partnerships.",
-      expertise: ["Platform Development", "Data Analytics", "Digital Innovation"]
+      name: "Sunita Devi",
+      position: "Community Relations",
+      description: "Dedicated to building strong relationships with farming communities and ensuring their needs are met.",
+      icon: Award,
+      expertise: ["Community Outreach", "Farmer Relations", "Rural Communication"]
     }
   ]
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-[#394937] to-[#2d3a2b] relative overflow-hidden" ref={ref}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Cpath d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
+    <section className="py-20 px-4 bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] relative overflow-hidden" ref={ref}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <motion.div 
+          className="absolute top-20 left-10 w-72 h-72 bg-[#225122] rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
       </div>
 
-      <div className="container mx-auto  relative z-10">
+      {/* Pattern Overlay */}
+     
+      <div className="container mx-auto relative z-10">
         <motion.div 
-          className="text-center mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-0"
+          className="text-center mb-16 px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div 
-            className="mb-4 sm:mb-6"
+            className="mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-[#394937] bg-white/40 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm border border-[#394937]/30">
-              <Users className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 text-white bg-white/20 rounded-full text-sm font-medium backdrop-blur-sm border border-white/30">
+              <Users className="w-4 h-4" />
               Our Team
             </span>
           </motion.div>
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 sm:mb-8"
+            className="text-4xl sm:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Meet Our <span className="bg-gradient-to-r from-[#394937] to-[#4a5a48] bg-clip-text text-[#758972]">Expert Team</span>
+            Meet Our <span className="bg-gradient-to-r text-[#4a8f4a] from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text">Expert Team</span>
           </motion.h2>
           <motion.p 
-            className="text-lg sm:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed"
+            className="text-md md:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -303,11 +313,11 @@ const TeamSection = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 px-4 sm:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/20"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
               transition={{ 
@@ -322,22 +332,22 @@ const TeamSection = () => {
               }}
             >
               <motion.div 
-                className="flex justify-center mb-3 sm:mb-4"
+                className="flex justify-center mb-4"
                 initial={{ scale: 0 }}
                 animate={inView ? { scale: 1 } : { scale: 0 }}
                 transition={{ delay: 1 + index * 0.2, duration: 0.5, type: "spring" }}
                 whileHover={{ scale: 1.2, rotate: 10 }}
               >
-                <member.icon className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
+                <member.icon className="w-16 h-16 text-white" />
               </motion.div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{member.name}</h3>
-              <p className="text-[#394937] font-medium mb-3 bg-white/20 rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm">{member.position}</p>
-              <p className="text-gray-200 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{member.description}</p>
+              <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+              <p className="text-green-200 font-medium mb-4 bg-white/20 rounded-full px-3 py-1 text-sm">{member.position}</p>
+              <p className="text-gray-200 text-sm mb-4 leading-relaxed">{member.description}</p>
               <div className="space-y-1">
                 {member.expertise.map((skill, skillIndex) => (
                   <motion.span
                     key={skillIndex}
-                    className="inline-block bg-[#394937]/30 text-white text-xs px-2 py-1 rounded-full mr-1 mb-1"
+                    className="inline-block bg-[#225122]/30 text-white text-xs px-2 py-1 rounded-full mr-1 mb-1"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                     transition={{ delay: 1.2 + index * 0.2 + skillIndex * 0.1 }}
@@ -361,35 +371,35 @@ const StorySection = () => {
   })
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden" ref={ref}>
-      <div className="container mx-auto  relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+    <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden" ref={ref}>
+      <div className="container mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div 
-              className="mb-4 sm:mb-6"
+              className="mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#394937]/10 text-[#394937] rounded-full text-xs sm:text-sm font-medium">
-                <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#225122]/10 text-[#225122] rounded-full text-sm font-medium">
+                <BookOpen className="w-4 h-4" />
                 Our Story
               </span>
             </motion.div>
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6"
+              className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              From Vision to <span className="bg-gradient-to-r from-[#394937] to-[#4a5a48] bg-clip-text text-transparent">Reality</span>
+              From Vision to <span className="bg-gradient-to-r from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent">Reality</span>
             </motion.h2>
             <motion.div 
-              className="space-y-4 sm:space-y-6 text-sm sm:text-base text-gray-600 leading-relaxed"
+              className="space-y-6 text-gray-600 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -412,18 +422,18 @@ const StorySection = () => {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="bg-gradient-to-br from-[#394937] to-[#4a5a48] rounded-2xl p-6 sm:p-8 text-white">
+            <div className="bg-gradient-to-br from-[#1a4d1a] via-[#225122] to-[#4a8f4a] rounded-2xl p-8 text-white">
               <motion.div 
-                className="text-center mb-6 sm:mb-8"
+                className="text-center mb-8"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Our Impact</h3>
-                <p className="text-sm sm:text-base text-gray-200">Making a difference in agricultural communities</p>
+                <h3 className="text-2xl font-bold mb-4">Our Impact</h3>
+                <p className="text-gray-200">Making a difference in agricultural communities</p>
               </motion.div>
               
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {[
                   { number: "500+", label: "Partnerships Created" },
                   { number: "10,000+", label: "Acres Connected" },
@@ -443,8 +453,8 @@ const StorySection = () => {
                     }}
                     whileHover={{ scale: 1.1 }}
                   >
-                    <div className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">{stat.number}</div>
-                    <div className="text-gray-200 text-xs sm:text-sm">{stat.label}</div>
+                    <div className="text-3xl font-bold mb-2">{stat.number}</div>
+                    <div className="text-gray-200 text-sm">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>

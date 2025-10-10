@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <>
     <motion.nav
-      className={`fixed w-full shadow-sm  py-5 px-6 flex justify-between items-center z-20 transition-colors duration-300 ${'bg-[#f8fcf4]' }`}
+      className={`fixed w-full shadow-sm  py-7 md:py-5 px-6 flex justify-between items-center z-20 transition-colors duration-300 ${'bg-[#f8fcf4]' }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100 }}
@@ -57,8 +57,8 @@ const Navbar = () => {
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 300 }}
       >
-        <Link to="/" className="text-gray-800 font-semibold text-2xl">
-          <img className='w-[30vw] sm:w-[25vw] md:w-[15vw] lg:w-[10vw] ' src={logo} alt="Bataidar Logo" />
+        <Link to="/" className="text-gray-800 font-semibold text-xl sm:text-2xl">
+          <img className='w-24 sm:w-28 md:w-32 lg:w-36 xl:w-40 h-auto' src={logo} alt="Bataidar Logo" />
         </Link>
       </motion.div>
       
@@ -101,7 +101,7 @@ const Navbar = () => {
        
         {isMenuOpen && (
           <motion.div
-            className="md:hidden absolute top-[8vh] left-0 right-0 bg-[#f8fcf4] shadow-lg rounded-b-lg py-4 px-4 z-10 border-t border-gray-100"
+            className="md:hidden absolute top-full left-0 right-0 bg-[#f8fcf4] shadow-lg rounded-b-lg py-4 px-4 z-10 border-t border-gray-100 mx-2"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
@@ -111,7 +111,7 @@ const Navbar = () => {
               <motion.div key={label} variants={itemVariants}>
                 <Link
                   to={idx === 0 ? '/about-us' : `/${label.toLowerCase()}`}
-                  className="block py-3 px-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium"
+                  className="block py-3 px-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {label}

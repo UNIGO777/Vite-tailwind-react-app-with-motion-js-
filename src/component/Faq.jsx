@@ -51,20 +51,20 @@ const Faq = () => {
   }
 
   return (
-    <section className="py-16 px-4 ">
-      <div className=" mx-auto max-w-7xl">
+    <section className=" px-4 mb-10 md:px-10">
+      <div className=" mx-auto ">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#394937] mb-4">
+        <div className="text-left mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r w-fit  from-[#1a4d1a] via-[#225122] to-[#4a8f4a] bg-clip-text text-transparent mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#4b7c59]  mx-auto">
             Find answers to common questions about our gardening services, plant care, and how we connect farmers with landowners.
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-2">
           {faqData.map((faq) => (
             <div
               key={faq.id}
@@ -75,7 +75,7 @@ const Faq = () => {
                 onClick={() => toggleFaq(faq.id)}
                 className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-inset"
               >
-                <h3 className="text-lg font-semibold text-[#394937] pr-4">
+                <h3 className="text-lg font-semibold text-[#4b7c59] pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
